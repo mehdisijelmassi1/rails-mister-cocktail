@@ -34,7 +34,12 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="card-cocktail">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if cocktail.photo.attached? %>
+          <%=cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          no picture
+
+        <% end %>
           <div class="card-cocktail-infos">
           <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </div>
@@ -42,3 +47,5 @@
     <% end %>
   </div>
 </div>
+
+
