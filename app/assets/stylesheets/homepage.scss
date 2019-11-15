@@ -1,0 +1,7 @@
+.row  {
+  display: grid;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+}
